@@ -1,0 +1,32 @@
+/* Tags */
+
+body {
+  background-color: lightgray;
+}
+.manny {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 50px 1fr 50px;
+}
+
+/* Classes */
+.center {
+  margin: 0;
+  text-align: center;
+}
+
+.flex-ctr {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.keyboard {
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 200px;
+}
