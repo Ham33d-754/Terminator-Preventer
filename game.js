@@ -1,4 +1,4 @@
-// Variables
+// Global Variables
 
 const Words = [
   'Skynet',
@@ -22,11 +22,18 @@ const Words = [
   'reprogrammed',
   'liquid-metal'
 ]
+let keyboard
+let hangedMan
+let win
 
 // Cached Elements
 
 // Functions
+
 const RandomWords = () => {
-  Math.random
+  return (randomWord = Words[Math.floor(Math.random() * Words.length)])
 }
+const randomWord = Words[Math.floor(Math.random() * Words.length)]
+console.log(randomWord)
+
 // Event Listeners

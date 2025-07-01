@@ -6,9 +6,9 @@ This is a hanged man style game with a Terminator theme
 
 # Wireframes
 
-![image](/homePage.png)
+![image](./images/homePage.png)
 
-![image](/gamePage.png)
+![image](./images/gamePage.png)
 
 # Pseudo-code
 
