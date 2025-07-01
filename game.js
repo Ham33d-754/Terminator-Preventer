@@ -28,12 +28,25 @@ let win
 
 // Cached Elements
 
+const keyBoardEl = document.querySelectorAll('.key')
+console.log(keyBoardEl)
+const resetBtnEl = document.querySelector('#resetBtn')
+
 // Functions
 
-const RandomWords = () => {
-  return (randomWord = Words[Math.floor(Math.random() * Words.length)])
+const init = () => {
+  RandomWords()
 }
-const randomWord = Words[Math.floor(Math.random() * Words.length)]
-console.log(randomWord)
+
+const RandomWords = () => {
+  console.log('oh hi mark!')
+  return (randomWord.textContent =
+    Words[Math.floor(Math.random() * Words.length)])
+}
+// const randomWord = Words[Math.floor(Math.random() * Words.length)]
+// console.log(randomWord)
 
 // Event Listeners
+
+init()
+// resetBtnEl.addEventListener('click')
