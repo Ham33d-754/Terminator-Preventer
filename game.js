@@ -84,3 +84,9 @@ const RandomWords = () => {
 init()
 
 resetBtnEl.addEventListener('click', init)
+
+keyEl.forEach((keyEl) => {
+  keyEl.addEventListener('click', () => {
+    console.log(keyEl.textContent)
+  })
+})
