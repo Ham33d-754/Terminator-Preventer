@@ -1,5 +1,5 @@
 // Global Variables
-
+///////////////////
 const Words = [
   'Skynet',
   'cyberdyne',
@@ -22,32 +22,65 @@ const Words = [
   'reprogrammed',
   'liquid-metal'
 ]
-let keyboard
 let hangedMan
 let win
 
 // Cached Elements
+//////////////////
 let guessWordEl = document.querySelector('.guessWord')
 const messageEl = document.querySelector('.message')
-const keyBoardEl = document.querySelectorAll('.key')
-console.log(keyBoardEl)
+const keyEl = document.querySelectorAll('.key')
+// console.log(keyEl)
 const resetBtnEl = document.querySelector('#resetBtn')
 
 // Functions
-
+////////////
 const init = () => {
+  const boardboard = [
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+  ]
+
   RandomWords()
 }
 
 const RandomWords = () => {
   // guessWordEl.textContent
-  guessWordEl = Words[Math.floor(Math.random() * Words.length)]
-  return console.log(guessWordEl)
+  randomWord = Words[Math.floor(Math.random() * Words.length)]
+  return console.log(randomWord)
 }
+
 // const randomWord = Words[Math.floor(Math.random() * Words.length)]
 // console.log(randomWord)
 
 // Event Listeners
+//////////////////
 
 init()
+
 resetBtnEl.addEventListener('click', init)
