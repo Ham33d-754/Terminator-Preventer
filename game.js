@@ -4,8 +4,6 @@ const Words = [
   'Skynet',
   'cyberdyne',
   'terminator',
-  'T-800',
-  'T-1000',
   'judgment',
   'resistance',
   'time-travel',
@@ -19,12 +17,11 @@ const Words = [
   'future-war',
   'machine',
   'assassin',
-  'reprogrammed',
-  'liquid-metal'
+  'reprogrammed'
 ]
+
 let hangedMan // images that will need to change eacg time the fails
 let win
-
 // Cached Elements
 //////////////////
 let guessWordEl = document.querySelector('.guessWord')
@@ -37,18 +34,47 @@ const resetBtnEl = document.querySelector('#resetBtn')
 ////////////
 const init = () => {
   RandomWords()
-  checkRandomWord()
+  // checkRandomWord()
+
+  // log checks
+  console.log(select)
 }
 
 const RandomWords = () => {
   // guessWordEl.textContent
   select = Words[Math.floor(Math.random() * Words.length)]
-  return console.log(select)
+  const chars = select.split('')
+  // console.log(chars)
+  censorWord(chars)
+  guessWordEl.textContent = cen
+  console.log(select)
+  return select
 }
 
-const checkRandomWord = () => {
+const censorWord = (chars) => {
+  cen = ''
+  censored = chars.forEach(() => {
+    cen += '-'
+  })
+}
+
+const checkRandomWord = (pressedKey) => {
   const chars = select.split('')
   console.log(chars)
+  chars.forEach((letter) => {
+    if (letter === pressedKey) {
+      console.log('letter is correct')
+    } else {
+      console.log('NOPE, try again')
+    }
+  })
+}
+
+const updateGuessWord = () => {
+  // Loop over board array & dispaly the state
+  keyEl.forEach((key, index) => {
+    key.textContent = board[index]
+  })
 }
 
 // Event Listeners
@@ -60,6 +86,7 @@ resetBtnEl.addEventListener('click', init)
 
 keyEl.forEach((keyEl) => {
   keyEl.addEventListener('click', () => {
+    checkRandomWord(keyEl.textContent)
     console.log(keyEl.textContent)
   })
 })
