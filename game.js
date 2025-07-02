@@ -1,27 +1,30 @@
 // Global Variables
 ///////////////////
 const Words = [
-  'Skynet',
-  'cyberdyne',
-  'terminator',
-  'judgment',
-  'resistance',
-  'time-travel',
-  'Sarah',
-  'Connor',
-  'John',
-  'Arnold',
-  'android',
-  'apocalypse',
-  'neural-net',
-  'future-war',
-  'machine',
-  'assassin',
-  'reprogrammed'
+  'john',
+  'sarah',
+  'skynet'
+  // 'cyberdyne',
+  // 'terminator',
+  // 'judgment',
+  // 'resistance',
+  // 'time-travel',
+  // 'connor',
+  // 'arnold',
+  // 'android',
+  // 'apocalypse',
+  // 'neural-net',
+  // 'future-war',
+  // 'machine',
+  // 'assassin',
+  // 'reprogrammed'
 ]
 
 let hangedMan // images that will need to change eacg time the fails
 let win
+let newEl
+// let cen = ''
+
 // Cached Elements
 //////////////////
 let guessWordEl = document.querySelector('.guessWord')
@@ -34,7 +37,6 @@ const resetBtnEl = document.querySelector('#resetBtn')
 ////////////
 const init = () => {
   RandomWords()
-  // checkRandomWord()
 
   // log checks
   console.log(select)
@@ -44,38 +46,55 @@ const RandomWords = () => {
   // guessWordEl.textContent
   select = Words[Math.floor(Math.random() * Words.length)]
   const chars = select.split('')
-  // console.log(chars)
+  console.log(chars)
   censorWord(chars)
-  guessWordEl.textContent = cen
-  console.log(select)
+  // console.log(select)
   return select
 }
 
+// hides the selected word and turns it to dashes (-)
 const censorWord = (chars) => {
-  cen = ''
-  censored = chars.forEach(() => {
-    cen += '-'
+  guessWordEl.textContent = ''
+  censored = chars.forEach((whatever, index) => {
+    newEl = document.createElement('span')
+    newEl.setAttribute('id', index)
+    newEl.textContent = '-'
+
+    guessWordEl.appendChild(newEl)
   })
 }
 
+// const censorWord = (chars) => {
+//   cen = []
+//   censored = chars.forEach(() => {
+//     cen.push('-')
+//   })
+// }
+
 const checkRandomWord = (pressedKey) => {
   const chars = select.split('')
-  console.log(chars)
-  chars.forEach((letter) => {
+  // console.log(chars)
+  chars.forEach((letter, index) => {
     if (letter === pressedKey) {
       console.log('letter is correct')
-    } else {
-      console.log('NOPE, try again')
+      // console.log(index)
+      let secrtArry = document
+        .querySelector('.guessWord')
+        .querySelectorAll('span')
+
+      // console.log(pressedKey)
+      secrtArry[index].innerHTML = `${letter}`
+      // console.log(guessWordEl)
     }
   })
 }
 
-const updateGuessWord = () => {
-  // Loop over board array & dispaly the state
-  keyEl.forEach((key, index) => {
-    key.textContent = board[index]
-  })
-}
+// const updateGuessWord = () => {
+//   // Loop over board array & dispaly the state
+//   keyEl.forEach((key, index) => {
+//     key.textContent = board[index]
+//   })
+// }
 
 // Event Listeners
 //////////////////
