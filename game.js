@@ -27,7 +27,8 @@ let hangedMan
 let win
 
 // Cached Elements
-
+let guessWordEl = document.querySelector('.guessWord')
+const messageEl = document.querySelector('.message')
 const keyBoardEl = document.querySelectorAll('.key')
 console.log(keyBoardEl)
 const resetBtnEl = document.querySelector('#resetBtn')
@@ -39,9 +40,9 @@ const init = () => {
 }
 
 const RandomWords = () => {
-  console.log('oh hi mark!')
-  return (randomWord.textContent =
-    Words[Math.floor(Math.random() * Words.length)])
+  // guessWordEl.textContent
+  guessWordEl = Words[Math.floor(Math.random() * Words.length)]
+  return console.log(guessWordEl)
 }
 // const randomWord = Words[Math.floor(Math.random() * Words.length)]
 // console.log(randomWord)
@@ -49,4 +50,4 @@ const RandomWords = () => {
 // Event Listeners
 
 init()
-// resetBtnEl.addEventListener('click')
+resetBtnEl.addEventListener('click', init)
