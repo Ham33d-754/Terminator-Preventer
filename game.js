@@ -22,7 +22,7 @@ const Words = [
   'reprogrammed',
   'liquid-metal'
 ]
-let hangedMan
+let hangedMan // images that will need to change eacg time the fails
 let win
 
 // Cached Elements
@@ -36,47 +36,20 @@ const resetBtnEl = document.querySelector('#resetBtn')
 // Functions
 ////////////
 const init = () => {
-  const boardboard = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
-  ]
-
   RandomWords()
+  checkRandomWord()
 }
 
 const RandomWords = () => {
   // guessWordEl.textContent
-  randomWord = Words[Math.floor(Math.random() * Words.length)]
-  return console.log(randomWord)
+  select = Words[Math.floor(Math.random() * Words.length)]
+  return console.log(select)
 }
 
-// const randomWord = Words[Math.floor(Math.random() * Words.length)]
-// console.log(randomWord)
+const checkRandomWord = () => {
+  const chars = select.split('')
+  console.log(chars)
+}
 
 // Event Listeners
 //////////////////
