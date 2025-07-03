@@ -3,24 +3,24 @@
 const Words = [
   'john',
   'sarah',
-  'skynet'
-  // 'cyberdyne',
-  // 'terminator',
-  // 'judgment',
-  // 'resistance',
-  // 'time-travel',
-  // 'connor',
-  // 'arnold',
-  // 'android',
-  // 'apocalypse',
-  // 'neural-net',
-  // 'future-war',
-  // 'machine',
-  // 'assassin',
-  // 'reprogrammed'
+  'skynet',
+  'cyberdyne',
+  'terminator',
+  'judgment',
+  'resistance',
+  'time-travel',
+  'connor',
+  'arnold',
+  'android',
+  'apocalypse',
+  'neural-net',
+  'future-war',
+  'machine',
+  'assassin',
+  'reprogrammed'
 ]
 
-let hangedMan // images that will need to change eacg time the fails
+let hangedMan = 0 // images that will need to change eacg time the fails
 let win
 let newEl
 // let cen = ''
@@ -28,7 +28,7 @@ let newEl
 // Cached Elements
 //////////////////
 let guessWordEl = document.querySelector('.guessWord')
-const messageEl = document.querySelector('.message')
+let messageEl = document.querySelector('#message')
 const keyEl = document.querySelectorAll('.key')
 // console.log(keyEl)
 const resetBtnEl = document.querySelector('#resetBtn')
@@ -41,7 +41,7 @@ const init = () => {
   // log checks
   console.log(select)
 }
-
+// Selects a random word from the words array
 const RandomWords = () => {
   // guessWordEl.textContent
   select = Words[Math.floor(Math.random() * Words.length)]
@@ -71,11 +71,9 @@ const checkRandomWord = (pressedKey) => {
   chars.forEach((letter, index) => {
     if (letter === pressedKey) {
       console.log('letter is correct')
-      // console.log(index)
       let secrtArry = document
         .querySelector('.guessWord')
         .querySelectorAll('span')
-      // console.log(index)
       // console.log(pressedKey)
       secrtArry[index].innerHTML = `${letter}`
       // console.log(guessWordEl)
@@ -83,16 +81,25 @@ const checkRandomWord = (pressedKey) => {
     }
   })
   if (foundLetterInWord === false) {
-    console.log('LOL! You are Bad at this!')
+    hangedMan++
+    console.log('letter is BAD')
+    console.log(hangedMan)
+    messageEl.innerHTML = `hi كيكرز`
+
+    document.getElementById('0').src = './hangman/1.png'
+    switch (hangedMan) {
+      case 0:
+        document.getElementById('0').src = './hangman/0.png'
+        break
+      case 1:
+        document.getElementById('0').src = './hangman/1.png'
+        break
+      case 2:
+        document.getElementById('0').src = './hangman/0.png'
+        messageEl.innerHTML = `YOU DIED AT THE HANDS OF THE TERMINATOR!`
+    }
   }
 }
-
-// const updateGuessWord = () => {
-//   // Loop over board array & dispaly the state
-//   keyEl.forEach((key, index) => {
-//     key.textContent = board[index]
-//   })
-// }
 
 // Event Listeners
 //////////////////
