@@ -64,13 +64,6 @@ const censorWord = (chars) => {
   })
 }
 
-// const censorWord = (chars) => {
-//   cen = []
-//   censored = chars.forEach(() => {
-//     cen.push('-')
-//   })
-// }
-
 const checkRandomWord = (pressedKey) => {
   const chars = select.split('')
   // console.log(chars)
@@ -81,7 +74,7 @@ const checkRandomWord = (pressedKey) => {
       let secrtArry = document
         .querySelector('.guessWord')
         .querySelectorAll('span')
-
+      // console.log(index)
       // console.log(pressedKey)
       secrtArry[index].innerHTML = `${letter}`
       // console.log(guessWordEl)

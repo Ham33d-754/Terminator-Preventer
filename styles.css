@@ -5,10 +5,19 @@ body {
 }
 .manny {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px 10px;
+  grid-template-areas:
+    'left right'
+    'feet feet';
 }
-
+.hangMan {
+  grid: left;
+}
+.gameSide {
+  grid-area: right;
+}
 .guessWord {
   font-size: 60px;
 }
@@ -25,20 +34,21 @@ body {
   align-items: center;
   width: 100%;
 }
+.feet {
+  grid-area: feet;
+}
 
 .keyboard {
   font-size: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+
   width: 300px;
 }
 
 .keyboard button {
   font-size: 50px;
   display: flex;
-  align-items: center;
 }
 
 #resetBtn {
