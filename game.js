@@ -65,6 +65,7 @@ const censorWord = (chars) => {
 }
 
 const checkRandomWord = (pressedKey) => {
+  let foundLetterInWord = false
   const chars = select.split('')
   // console.log(chars)
   chars.forEach((letter, index) => {
@@ -78,8 +79,12 @@ const checkRandomWord = (pressedKey) => {
       // console.log(pressedKey)
       secrtArry[index].innerHTML = `${letter}`
       // console.log(guessWordEl)
+      foundLetterInWord = true
     }
   })
+  if (foundLetterInWord === false) {
+    console.log('LOL! You are Bad at this!')
+  }
 }
 
 // const updateGuessWord = () => {
