@@ -2,25 +2,25 @@
 ///////////////////
 const Words = [
   'john',
-  'sarah',
-  'skynet',
-  'cyberdyne',
-  'terminator',
-  'judgment',
-  'resistance',
-  'time-travel',
-  'connor',
-  'arnold',
-  'android',
-  'apocalypse',
-  'neural-net',
-  'future-war',
-  'machine',
-  'assassin',
-  'reprogrammed'
+  'sarah'
+  // 'skynet',
+  // 'cyberdyne',
+  // 'terminator',
+  // 'judgment',
+  // 'resistance',
+  // 'time-travel',
+  // 'connor',
+  // 'arnold',
+  // 'android',
+  // 'apocalypse',
+  // 'neural-net',
+  // 'future-war',
+  // 'machine',
+  // 'assassin',
+  // 'reprogrammed'
 ]
 
-let hangedMan = 0 // images that will need to change eacg time the fails
+let hangedMan = 10 // images that will need to change eacg time the fails
 let win
 let newEl
 // let cen = ''
@@ -43,7 +43,6 @@ const init = () => {
 }
 // Selects a random word from the words array
 const RandomWords = () => {
-  // guessWordEl.textContent
   select = Words[Math.floor(Math.random() * Words.length)]
   const chars = select.split('')
   console.log(chars)
@@ -70,33 +69,52 @@ const checkRandomWord = (pressedKey) => {
   // console.log(chars)
   chars.forEach((letter, index) => {
     if (letter === pressedKey) {
+      //
+      // turn this into a function
       console.log('letter is correct')
       let secrtArry = document
         .querySelector('.guessWord')
         .querySelectorAll('span')
-      // console.log(pressedKey)
       secrtArry[index].innerHTML = `${letter}`
-      // console.log(guessWordEl)
       foundLetterInWord = true
+      // turn this into a function
+      //
+
+      const newArray = []
+      Array.from(secrtArry).forEach((span, index) => {
+        newArray.push(span.innerText)
+      })
+      const newWord = newArray.join('')
+
+      if (select === newWord) {
+        messageEl.innerHTML = `YOU WON!!!`
+      }
     }
   })
+  //
+  // turn this into a function
   if (foundLetterInWord === false) {
-    hangedMan++
+    hangedMan--
     console.log('letter is BAD')
     console.log(hangedMan)
-    messageEl.innerHTML = `hi كيكرز`
+    // messageEl.innerHTML = `hi كيكرز`
 
-    document.getElementById('0').src = './hangman/1.png'
     switch (hangedMan) {
+      case 10:
+        document.getElementById('image').src = './hangman/0.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+
+        break
+      case 9:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+
+        break
       case 0:
-        document.getElementById('0').src = './hangman/0.png'
-        break
-      case 1:
-        document.getElementById('0').src = './hangman/1.png'
-        break
-      case 2:
-        document.getElementById('0').src = './hangman/0.png'
+        document.getElementById('image').src = './hangman/0.png'
         messageEl.innerHTML = `YOU DIED AT THE HANDS OF THE TERMINATOR!`
+      // turn this into a function
+      //
     }
   }
 }
