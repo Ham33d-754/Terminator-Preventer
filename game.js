@@ -97,21 +97,61 @@ const checkRandomWord = (pressedKey) => {
     hangedMan--
     console.log('letter is BAD')
     console.log(hangedMan)
-    // messageEl.innerHTML = `hi كيكرز`
 
     switch (hangedMan) {
       case 10:
         document.getElementById('image').src = './hangman/0.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
-
         break
+
       case 9:
         document.getElementById('image').src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
-
         break
+
+      case 8:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        break
+
+      case 7:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        break
+
+      case 6:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        break
+
+      case 5:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        break
+
+      case 4:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        break
+
+      case 3:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        break
+
+      case 2:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        break
+
+      case 1:
+        document.getElementById('image').src = './hangman/1.png'
+        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        break
+
       case 0:
         document.getElementById('image').src = './hangman/0.png'
+        messageEl.style.color = 'red'
         messageEl.innerHTML = `YOU DIED AT THE HANDS OF THE TERMINATOR!`
       // turn this into a function
       //
