@@ -21,7 +21,7 @@ const Words = [
 ]
 
 let hangedMan = 10 // images that will need to change eacg time the fails
-let win
+let win = false
 let newEl
 // let cen = ''
 
@@ -32,12 +32,13 @@ let messageEl = document.querySelector('#message')
 const keyEl = document.querySelectorAll('.key')
 // console.log(keyEl)
 const resetBtnEl = document.querySelector('#resetBtn')
+let hangManImage = document.getElementById('image')
 
 // Functions
 ////////////
 const init = () => {
   RandomWords()
-
+  win = false
   // log checks
   console.log(select)
 }
@@ -87,6 +88,7 @@ const checkRandomWord = (pressedKey) => {
       const newWord = newArray.join('')
 
       if (select === newWord) {
+        win = true
         messageEl.innerHTML = `YOU WON!!!`
       }
     }
@@ -96,61 +98,61 @@ const checkRandomWord = (pressedKey) => {
   if (foundLetterInWord === false) {
     hangedMan--
     console.log('letter is BAD')
-    console.log(hangedMan)
+    // console.log(hangedMan)
 
     switch (hangedMan) {
       case 10:
-        document.getElementById('image').src = './hangman/0.png'
+        hangManImage.src = './hangman/0.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 9:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 8:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 7:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 6:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 5:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 4:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 3:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 2:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 1:
-        document.getElementById('image').src = './hangman/1.png'
+        hangManImage.src = './hangman/1.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 0:
-        document.getElementById('image').src = './hangman/0.png'
+        document.getElementById('image').src = './images/lossGame.jfif'
         messageEl.style.color = 'red'
         messageEl.innerHTML = `YOU DIED AT THE HANDS OF THE TERMINATOR!`
       // turn this into a function
@@ -164,11 +166,19 @@ const checkRandomWord = (pressedKey) => {
 
 init()
 
-resetBtnEl.addEventListener('click', init)
+resetBtnEl.addEventListener('click', () => {
+  messageEl.innerHTML = `Reset completed`
+
+  init()
+})
 
 keyEl.forEach((keyEl) => {
   keyEl.addEventListener('click', () => {
-    checkRandomWord(keyEl.textContent)
-    console.log(keyEl.textContent)
+    if (win === true) {
+      return
+    } else {
+      checkRandomWord(keyEl.textContent)
+      // console.log(keyEl.textContent)
+    }
   })
 })

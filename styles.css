@@ -58,6 +58,15 @@ a {
   font-size: 30px;
 }
 .blackWhite {
-  background-color: black;
+  /* background-color: black; */
   color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+span {
+  background-color: black;
 }
