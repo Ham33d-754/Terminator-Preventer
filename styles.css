@@ -1,10 +1,11 @@
 /* Tags */
 
 body {
-  background: url(./images/background2.jpg) no-repeat center center;
-  background-size: cover;
+  font-family: 'Agency FB', sans-serif;
 }
 .manny {
+  background: url(./images/background2.jpg) no-repeat center center;
+  background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -13,12 +14,35 @@ body {
     'left right'
     'feet feet';
 }
+
 .hangMan {
   grid: left;
 }
 .gameSide {
   grid-area: right;
 }
+
+.mandy {
+  background-color: black;
+  display: grid;
+  text-align: center;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  gap: 20px 10px;
+  grid-template-areas:
+    'indexA indexB'
+    'indexA indexC';
+}
+.indexA {
+  grid-area: indexA;
+}
+.indexB {
+  grid-area: indexB;
+}
+.indexC {
+  grid-area: indexC;
+}
+
 .guessWord {
   font-size: 60px;
 }
