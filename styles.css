@@ -6,12 +6,17 @@
 body {
   font-family: 'Orbitron', sans-serif;
   cursor: crosshair;
+  color: white;
+  justify-content: center;
+  padding-top: 50px;
 }
 
 a {
-  font-size: 30px;
   text-decoration: none;
-  color: aliceblue;
+}
+a:hover {
+  color: black;
+  background-color: #666;
 }
 
 span {
@@ -24,6 +29,19 @@ h1 {
 
 h4 {
   font-size: 20px;
+}
+
+button {
+  font-size: 30px;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+button:hover {
+  color: black;
+  background-color: #666;
 }
 
 /* classes */
@@ -91,9 +109,12 @@ h4 {
 
 .keyboard {
   font-size: 50px;
+  width: 300px;
+  margin: 10px;
   display: flex;
   flex-direction: row;
-  width: 300px;
+  justify-content: center;
+  gap: 8px;
 }
 
 .keyboard button {
@@ -105,53 +126,61 @@ h4 {
   color: aliceblue;
 }
 
-/* ID */
-
-#resetBtn {
-  font-size: 30px;
-}
-
 /* CHANGE */
-body {
-  background-color: #111;
-  font-family: 'Agency FB', sans-serif;
-  color: white;
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-}
 
 .keyboard {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .key {
-  background-color: #222;
-  color: #f0f0f0;
-  border: 2px solid #444;
-  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  border: 2px solid #666;
+  border-radius: 10px;
   padding: 20px;
-  /* font-size: 1.4rem; */
   font-weight: bold;
   text-transform: uppercase;
-  /* cursor: crosshair; */
-  /* transition: all 0.2s ease; */
-  /* box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2); */
 }
 
 .key:hover {
-  background-color: #00ffff;
-  color: #111;
-  box-shadow: 0 0 15px #00ffff, 0 0 5px #0ff;
+  background-color: #666;
+  color: black;
+  box-shadow: 0 0 20px cyan;
   transform: scale(1.1);
 }
 
-.key:active {
-  background-color: #0ff;
-  transform: scale(0.95);
+.key.correct {
+  background-color: #00ff0d; /* Green for correct keys */
+  color: black;
+  box-shadow: 0 0 20px #00ff0d;
+  pointer-events: none; /* disables clicking again */
+  transform: scale(0.9);
+}
+
+.key.wrong {
+  background-color: #ff0000; /* Red for wrong keys */
+  color: white;
+  box-shadow: 0 0 20px #ff0000;
+  pointer-events: none; /* disables clicking again */
+  transform: scale(0.9);
 }
 
 /*  */
+
+/* ID */
+
+#resetBtn {
+  font-size: 30px;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+#resetBtn:hover {
+  color: black;
+  background-color: #666;
+}

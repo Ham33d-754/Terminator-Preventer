@@ -146,7 +146,7 @@ const checkRandomWord = (pressedKey) => {
       case 0:
         document.getElementById('image').src = './images/lossGame.png'
         messageEl.style.color = 'red'
-        messageEl.innerHTML = `YOU DIED AT THE HANDS OF THE TERMINATOR!`
+        messageEl.innerHTML = `PrePare TO BE TERMINATED`
       // turn this into a function
       //
     }
@@ -162,8 +162,12 @@ resetBtnEl.addEventListener('click', () => {
   messageEl.style.color = 'white'
   messageEl.innerHTML = `Reset completed`
   hangManImage.src = './hangman/0.png'
-
   hangedMan = 10
+  keyEl.forEach((key) => {
+    key.classList.remove('correct')
+    key.classList.remove('wrong')
+  })
+
   init()
 })
 
@@ -171,8 +175,17 @@ keyEl.forEach((keyEl) => {
   keyEl.addEventListener('click', () => {
     if (win === true) {
       return
+    } else if (hangedMan === 0) {
+      return
     } else {
       checkRandomWord(keyEl.textContent)
+      const pressed = keyEl.textContent.toLowerCase()
+
+      if (select.includes(pressed)) {
+        keyEl.classList.add('correct')
+      } else {
+        keyEl.classList.add('wrong')
+      }
     }
   })
 })
