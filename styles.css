@@ -114,27 +114,13 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .keyboard button {
   font-size: 50px;
   display: flex;
 }
-
-.blackWhite {
-  color: aliceblue;
-}
-
-/* CHANGE */
-
-.keyboard {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin: 10px;
-}
-
 .key {
   background-color: #333;
   color: white;
@@ -168,7 +154,9 @@ button:hover {
   transform: scale(0.9);
 }
 
-/*  */
+.blackWhite {
+  color: aliceblue;
+}
 
 /* ID */
 
