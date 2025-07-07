@@ -3,22 +3,22 @@
 
 const Words = [
   'john',
-  'sarah'
-  // 'skynet',
-  // 'cyberdyne',
-  // 'terminator',
-  // 'judgment',
-  // 'resistance',
-  // 'time-travel',
-  // 'connor',
-  // 'arnold',
-  // 'android',
-  // 'apocalypse',
-  // 'neural-net',
-  // 'future-war',
-  // 'machine',
-  // 'assassin',
-  // 'reprogrammed'
+  'sarah',
+  'skynet',
+  'cyberdyne',
+  'terminator',
+  'judgment',
+  'resistance',
+  'time-travel',
+  'connor',
+  'arnold',
+  'android',
+  'apocalypse',
+  'neural-net',
+  'future-war',
+  'machine',
+  'assassin',
+  'reprogrammed'
 ]
 
 let hangedMan = 10 // images that will need to change eacg time the fails
@@ -65,11 +65,13 @@ const censorWord = (chars) => {
 const checkRandomWord = (pressedKey) => {
   let foundLetterInWord = false
   const chars = select.split('')
+
   chars.forEach((letter, index) => {
     if (letter === pressedKey) {
       let secrtArry = document
         .querySelector('.guessWord')
         .querySelectorAll('span')
+
       secrtArry[index].innerHTML = `${letter}`
       foundLetterInWord = true
 
@@ -87,68 +89,65 @@ const checkRandomWord = (pressedKey) => {
       }
     }
   })
-  //
-  // turn this into a function
+
   if (foundLetterInWord === false) {
     hangedMan--
-
+    // HangedMan Variable will serach the cases for the appropriate image
     switch (hangedMan) {
       case 10:
         hangManImage.src = './hangman/0.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `Its okay! you still have ${hangedMan} chances!`
         break
 
       case 9:
         hangManImage.src = './hangman/1.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `Its okay! you still have ${hangedMan} chances!`
         break
 
       case 8:
         hangManImage.src = './hangman/2.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `Its okay! you still have ${hangedMan} chances!`
         break
 
       case 7:
         hangManImage.src = './hangman/3.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `Careful you have ${hangedMan} chances!`
         break
 
       case 6:
         hangManImage.src = './hangman/4.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `careful you have ${hangedMan} chances!`
         break
 
       case 5:
         hangManImage.src = './hangman/5.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `careful you have ${hangedMan} chances!`
         break
 
       case 4:
         hangManImage.src = './hangman/6.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `Hey Careful! you got ${hangedMan} chances!`
         break
 
       case 3:
         hangManImage.src = './hangman/7.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `WHAT ARE YOU DOING?! ${hangedMan} chances left!`
         break
 
       case 2:
         hangManImage.src = './hangman/8.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = `YOU CAN PANIC NOW! ${hangedMan} CHANCES LEFT!`
         break
 
       case 1:
         hangManImage.src = './hangman/9.png'
-        messageEl.innerHTML = `careful you ${hangedMan} chances!`
+        messageEl.innerHTML = ` ${hangedMan} chance left. It was good knowing you.`
         break
 
       case 0:
         document.getElementById('image').src = './images/lossGame.png'
         messageEl.style.color = 'red'
         messageEl.innerHTML = `PrePare TO BE TERMINATED`
-      // turn this into a function
-      //
     }
   }
 }
