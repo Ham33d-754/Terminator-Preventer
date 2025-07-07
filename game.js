@@ -89,7 +89,9 @@ const checkRandomWord = (pressedKey) => {
 
       if (select === newWord) {
         win = true
+        messageEl.style.color = 'Green'
         messageEl.innerHTML = `YOU WON!!!`
+        document.getElementById('image').src = './images/wonGame.png'
       }
     }
   })
@@ -112,47 +114,47 @@ const checkRandomWord = (pressedKey) => {
         break
 
       case 8:
-        hangManImage.src = './hangman/1.png'
+        hangManImage.src = './hangman/2.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 7:
-        hangManImage.src = './hangman/1.png'
+        hangManImage.src = './hangman/3.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 6:
-        hangManImage.src = './hangman/1.png'
+        hangManImage.src = './hangman/4.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 5:
-        hangManImage.src = './hangman/1.png'
+        hangManImage.src = './hangman/5.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 4:
-        hangManImage.src = './hangman/1.png'
+        hangManImage.src = './hangman/6.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 3:
-        hangManImage.src = './hangman/1.png'
+        hangManImage.src = './hangman/7.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 2:
-        hangManImage.src = './hangman/1.png'
+        hangManImage.src = './hangman/8.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 1:
-        hangManImage.src = './hangman/1.png'
+        hangManImage.src = './hangman/9.png'
         messageEl.innerHTML = `careful you ${hangedMan} chances!`
         break
 
       case 0:
-        document.getElementById('image').src = './images/lossGame.jfif'
+        document.getElementById('image').src = './images/lossGame.png'
         messageEl.style.color = 'red'
         messageEl.innerHTML = `YOU DIED AT THE HANDS OF THE TERMINATOR!`
       // turn this into a function
