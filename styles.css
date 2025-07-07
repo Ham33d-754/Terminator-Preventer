@@ -13,6 +13,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 a:hover {
   color: black;
@@ -152,10 +153,6 @@ button:hover {
   box-shadow: 0 0 20px #ff0000;
   pointer-events: none; /* disables clicking again */
   transform: scale(0.9);
-}
-
-.blackWhite {
-  color: aliceblue;
 }
 
 /* ID */
