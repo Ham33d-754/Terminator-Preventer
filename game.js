@@ -1,7 +1,7 @@
 // Global Variables
 ///////////////////
 
-const Words = [
+const words = [
   'john',
   'sarah',
   'skynet',
@@ -44,10 +44,10 @@ const init = () => {
 
 // Selects a random word from the words array
 const RandomWords = () => {
-  select = Words[Math.floor(Math.random() * Words.length)]
-  const chars = select.split('')
+  selectedWord = words[Math.floor(Math.random() * words.length)]
+  const chars = selectedWord.split('')
   censorWord(chars)
-  return select
+  return selectedWord
 }
 
 // hides the selected word and turns it to dashes (-)
@@ -64,7 +64,7 @@ const censorWord = (chars) => {
 
 const checkRandomWord = (pressedKey) => {
   let foundLetterInWord = false
-  const chars = select.split('')
+  const chars = selectedWord.split('')
 
   chars.forEach((letter, index) => {
     if (letter === pressedKey) {
@@ -81,7 +81,7 @@ const checkRandomWord = (pressedKey) => {
       })
       const newWord = newArray.join('')
 
-      if (select === newWord) {
+      if (selectedWord === newWord) {
         win = true
         messageEl.style.color = 'Green'
         messageEl.innerHTML = `YOU WON!!!`
@@ -180,7 +180,7 @@ keyEl.forEach((keyEl) => {
       checkRandomWord(keyEl.textContent)
       const pressed = keyEl.textContent.toLowerCase()
 
-      if (select.includes(pressed)) {
+      if (selectedWord.includes(pressed)) {
         keyEl.classList.add('correct')
       } else {
         keyEl.classList.add('wrong')

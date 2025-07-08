@@ -22,3 +22,15 @@ This is a hanged man style game with a Terminator theme
 7. if the hanged man has been drawn fully the player loses.
 8. when the round is complete the player can choose to try another word.
 9. the player can return to the loading screen by pressing (return to loading screen).
+
+# Getting Started
+
+http://terminator-prevente.surge.sh/
+
+# Technologies used
+
+The game is web-based and uses:
+
+1. HTML
+2. CSS
+3. Java Script
